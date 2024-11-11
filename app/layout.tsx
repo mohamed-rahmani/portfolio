@@ -23,9 +23,7 @@ export default function RootLayout({ children }: LayoutProps) {
       <body className={clsx(inter.className, "bg-background")}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Header />
-          <main className="flex-1 max-w-lg m-auto py-14 w-full">
-            {children}
-          </main>
+          <main className="flex-1 m-auto w-full">{children}</main>
           <Footer />
         </ThemeProvider>
       </body>
