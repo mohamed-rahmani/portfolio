@@ -11,23 +11,12 @@ import { Menu } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-// Hook pour détecter si le rendu est côté client
-function useIsClient() {
-  const [isClient, setIsClient] = useState(false);
-
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
-
-  return isClient;
-}
-
 // Hook pour obtenir la taille de la fenêtre côté client
 function useWindowSize() {
   const [windowSize, setWindowSize] = useState({ width: 0, height: 0 });
 
   useEffect(() => {
-    if (typeof window === "undefined") return;
+    if (typeof window === "undefined") return; // Vérification que nous sommes côté client
 
     const handleResize = () => {
       setWindowSize({
@@ -36,8 +25,10 @@ function useWindowSize() {
       });
     };
 
+    // Initialiser la taille
     handleResize();
 
+    // Mettre à jour la taille au redimensionnement
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
@@ -46,17 +37,16 @@ function useWindowSize() {
 }
 
 const Header = () => {
-  const isClient = useIsClient();
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const { width } = isClient ? useWindowSize() : { width: 0 };
+  const { width } = useWindowSize();
   const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
 
-  if (!isClient) {
-    return null;
+  if (width === 0) {
+    // Si la largeur de la fenêtre n'est pas encore déterminée, afficher un état de chargement
+    return <div>Loading...</div>;
   }
 
   return (
