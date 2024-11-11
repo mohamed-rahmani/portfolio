@@ -48,11 +48,11 @@ const skills = [
   },
   {
     label: "CI/CD",
-    content: ["Jenkins"],
+    content: ["Jenkins", "Git"],
   },
   {
     label: "Gestion projet",
-    content: ["Jira", "Trello", "Git"],
+    content: ["Jira", "Trello"],
   },
 ];
 
