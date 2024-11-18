@@ -44,7 +44,7 @@ interface AppCategory {
 
 const apps: AppCategory[] = [
   {
-    label: "Entreprise",
+    label: "Universitaire",
     projets: [
       {
         name: "Perform Vision, Training & Consulting",
@@ -58,7 +58,7 @@ const apps: AppCategory[] = [
       {
         name: "Perform Vision, Training & Consulting",
         image: performFormation,
-        purpose: "Site de formations",
+        purpose: "Audit Site de formations",
         role: "Auditeur Interne",
         skills: ["React", "Typescript", "CSS", "Laravel", "PostgreSQL"],
         site: "https://perform-vision.netchill.net/",
@@ -132,7 +132,7 @@ export default function Applications() {
                 >
                   <div
                     className={`grid grid-cols-1 gap-6 mt-4 ${
-                      activeTab == "Entreprise"
+                      activeTab == "Universitaire"
                         ? "sm:grid-cols-2"
                         : "sm:grid-cols-1"
                     }`}
