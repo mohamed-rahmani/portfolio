@@ -23,7 +23,7 @@ const works = [
     label: "Professionnel",
     name: "Digi & iTech",
     logo: "https://f904f9-3.myshopify.com/cdn/shop/files/Logo_D_I_Transparent.png?v=1710837473&width=60",
-    url: "https://f904f9-3.myshopify.com",
+    url: "",
     content:
       "Conception, création et intégration d'une template de site de e-commerce sur le CMS Shopify.",
     duration: "2 mois",
